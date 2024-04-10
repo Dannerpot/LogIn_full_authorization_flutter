@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:modern_login/pages/auth_page.dart';
-import 'package:modern_login/pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:modern_login/view/welcome_view.dart';
+import 'package:modern_login/firebase_options.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -13,13 +12,13 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthPage(),
+      home: WelcomePage(),
     );
   }
 }

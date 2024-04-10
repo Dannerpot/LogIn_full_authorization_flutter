@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:modern_login/components/my_buttom.dart';
+import 'package:modern_login/components/my_button.dart';
 import 'package:modern_login/components/my_textfield.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:modern_login/components/square_tile.dart';
-
+import 'package:modern_login/pages/login_page.dart';
 import '../services/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -164,14 +164,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       imagePath: 'lib/icons/google.svg',
                       height: 70,
                     ),
-
-                    SizedBox(width: 20),
-                    // apple buttom
-                    SquareTile(
-                      onTap: () {},
-                      imagePath: 'lib/icons/apple.svg',
-                      height: 70,
-                    ),
                   ],
                 ),
                 const SizedBox(
@@ -188,7 +180,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       style: TextStyle(color: Colors.grey[600], fontSize: 12),
                     ),
                     GestureDetector(
-                      onTap: widget.onTap,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginPage(
+                                    onTap: () {},
+                                  )),
+                        );
+                      },
                       child: Text(
                         'Login now',
                         style: TextStyle(

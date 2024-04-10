@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:modern_login/components/my_buttom.dart';
+import 'package:modern_login/components/my_button.dart';
 import 'package:modern_login/components/my_textfield.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:modern_login/components/square_tile.dart';
+import 'package:modern_login/pages/register_page.dart';
 import 'package:modern_login/services/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -78,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 50),
                 //logo
                 const Icon(
-                  Icons.lock_person,
+                  Icons.mail_lock,
                   size: 150,
                 ),
                 const SizedBox(height: 10),
@@ -118,27 +119,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 //forgot passowrd
 
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Forgot your login details? ',
-                        style: TextStyle(
-                            color: Colors.grey.shade600, fontSize: 12),
-                      ),
-                      Text(
-                        'Get help logging in.',
-                        style: TextStyle(
-                          color: Colors.blue.shade900,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+               
 
                 const SizedBox(
                   height: 10,
@@ -186,12 +167,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
 
                     SizedBox(width: 20),
-                    // apple buttom
-                    SquareTile(
-                      onTap: () {},
-                      imagePath: 'lib/icons/Vector.svg',
-                      height: 70,
-                    ),
                   ],
                 ),
                 const SizedBox(
@@ -208,7 +183,15 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(color: Colors.grey[600], fontSize: 12),
                     ),
                     GestureDetector(
-                      onTap: widget.onTap,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterPage(
+                                    onTap: () {},
+                                  )),
+                        );
+                      },
                       child: Text(
                         'Register now',
                         style: TextStyle(
