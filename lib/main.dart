@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:modern_login/view/welcome_view.dart';
+import 'package:modern_login/views/welcome_view.dart';
 import 'package:modern_login/firebase_options.dart';
 
 Future<void> main() async {

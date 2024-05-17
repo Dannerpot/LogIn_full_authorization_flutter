@@ -5,23 +5,23 @@ import 'package:modern_login/components/my_button.dart';
 import 'package:modern_login/components/my_textfield.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:modern_login/components/square_tile.dart';
-import 'package:modern_login/pages/login_page.dart';
-import '../services/auth_service.dart';
+import 'package:modern_login/services/register_page.dart';
+import 'package:modern_login/services/auth_service.dart';
 
-class RegisterPage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   final Function()? onTap;
-  RegisterPage({super.key, required this.onTap});
+  LoginPage({super.key, required this.onTap});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
 
-  void signUserUp() async {
+  final passwordController = TextEditingController();
+
+  void signUserIn() async {
     // show loading circle
     showDialog(
         context: context,
@@ -32,17 +32,10 @@ class _RegisterPageState extends State<RegisterPage> {
         });
 
     try {
-      // check if both password and confirm pasword is same
-      if (passwordController.text == confirmPasswordController.text) {
-        await FirebaseAuth.instance.createUserWithEmailAndPassword(
-          email: emailController.text,
-          password: passwordController.text,
-        );
-      } else {
-        //show error password dont match
-        genericErrorMessage("Password don't match!");
-      }
-
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
       //pop the loading circle
       Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
@@ -86,12 +79,19 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 50),
                 //logo
                 const Icon(
-                  Icons.lock,
-                  size: 100,
+                  Icons.mail_lock,
+                  size: 150,
                 ),
                 const SizedBox(height: 10),
                 //welcome back you been missed
 
+                Text(
+                  'Welcome back you\'ve been missed',
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 15,
+                  ),
+                ),
                 const SizedBox(height: 25),
 
                 //username
@@ -110,19 +110,20 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 const SizedBox(height: 15),
 
-                MyTextField(
-                  controller: confirmPasswordController,
-                  hintText: 'Confirm Password',
-                  obscureText: true,
-                ),
-                const SizedBox(height: 15),
-
                 //sign in button
                 MyButton(
-                  onTap: signUserUp,
-                  text: 'Sign Up',
+                  onTap: signUserIn,
+                  text: 'Sign In',
                 ),
                 const SizedBox(height: 20),
+
+                //forgot passowrd
+
+               
+
+                const SizedBox(
+                  height: 10,
+                ),
 
                 // continue with
                 Padding(
@@ -164,6 +165,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       imagePath: 'lib/icons/google.svg',
                       height: 70,
                     ),
+
+                    SizedBox(width: 20),
                   ],
                 ),
                 const SizedBox(
@@ -176,7 +179,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account? ',
+                      'Not a member? ',
                       style: TextStyle(color: Colors.grey[600], fontSize: 12),
                     ),
                     GestureDetector(
@@ -184,17 +187,17 @@ class _RegisterPageState extends State<RegisterPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => LoginPage(
+                              builder: (context) => RegisterPage(
                                     onTap: () {},
                                   )),
                         );
                       },
                       child: Text(
-                        'Login now',
+                        'Register now',
                         style: TextStyle(
                             color: Colors.blue[900],
                             fontWeight: FontWeight.bold,
-                            fontSize: 14),
+                            fontSize: 15),
                       ),
                     ),
                   ],

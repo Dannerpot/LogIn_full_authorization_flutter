@@ -1,7 +1,7 @@
 // welcome_view_model.dart
 import 'package:flutter/material.dart';
 
-import '../pages/register_page.dart';
+import '../services/register_page.dart';
 
 class WelcomeViewModel extends ChangeNotifier {
   // Add any methods or logic needed for the Welcome screen here
