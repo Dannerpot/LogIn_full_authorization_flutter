@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:modern_login/viewmodels/login_view_model.dart';
+import 'package:modern_login/viewmodels/register_view_model.dart';
 import 'package:modern_login/widgets/my_button.dart';
 import 'package:modern_login/widgets/my_textfield.dart';
 
-class LoginView extends StatelessWidget {
-  final LoginViewModel viewModel;
+class RegisterView extends StatelessWidget {
+  final RegisterViewModel viewModel;
 
-  LoginView({required this.viewModel});
+  RegisterView({required this.viewModel});
 
   @override
   Widget build(BuildContext context) {
@@ -17,22 +17,27 @@ class LoginView extends StatelessWidget {
           children: [
             MyTextField(
               hintText: 'Email',
-              onChanged: (value) {}, controller: TextEditingController(), // Implement your logic
+              onChanged: (value) {},controller: TextEditingController(), // Implement your logic
             ),
             MyTextField(
               hintText: 'Password',
               obscureText: true,
-              onChanged: (value) {}, controller: TextEditingController(), // Implement your logic
+              onChanged: (value) {},controller: TextEditingController(), // Implement your logic
+            ),
+            MyTextField(
+              hintText: 'Confirm Password',
+              obscureText: true,
+              onChanged: (value) {},controller: TextEditingController(), // Implement your logic
             ),
             MyButton(
-              text: 'Sign In',
+              text: 'Create Account',
               onPressed: () {}, // Implement your logic
             ),
             TextButton(
               onPressed: () {
                 viewModel.togglePages();
               },
-              child: const Text('Create Account'),
+              child: Text('Already have an account? Sign In'),
             ),
           ],
         ),

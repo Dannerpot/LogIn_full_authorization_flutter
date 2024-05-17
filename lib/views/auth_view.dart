@@ -1,28 +1,38 @@
-// auth_view.dart
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modern_login/viewmodels/auth_view_model.dart';
+import 'package:modern_login/viewmodels/login_view_model.dart';
+import 'package:modern_login/viewmodels/register_view_model.dart';
 import 'package:modern_login/views/login_view.dart';
 import 'package:modern_login/views/register_view.dart';
+import 'package:modern_login/views/home_page.dart'; 
+import 'package:provider/provider.dart';
+
 
 class AuthView extends StatelessWidget {
-  final AuthViewModel viewModel;
-
-  AuthView({required this.viewModel});
-
   @override
   Widget build(BuildContext context) {
+    final authViewModel = Provider.of<AuthViewModel>(context);
+
     return Scaffold(
       body: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return HomeView();
+            return HomePage(); // Use HomeView here if logged in
           } else {
-            return LoginOrRegisterView(onTap: viewModel.togglePages);
+            return _buildAuthChild(context, authViewModel);
           }
         },
       ),
     );
+  }
+
+  Widget _buildAuthChild(BuildContext context, AuthViewModel viewModel) {
+    if (viewModel.showLoginPage) {
+      return LoginView(viewModel: LoginViewModel(authViewModel: viewModel));
+    } else {
+      return RegisterView(viewModel: RegisterViewModel(authViewModel: viewModel));
+    }
   }
 }
