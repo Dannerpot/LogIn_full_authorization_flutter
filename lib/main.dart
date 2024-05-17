@@ -7,6 +7,7 @@ import 'package:modern_login/views/auth_view.dart';
 import 'package:modern_login/views/home_page.dart';
 import 'package:modern_login/viewmodels/auth_view_model.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => AuthViewModel(),
       child: MaterialApp(
-        title: 'Your App Name',
+        title: 'Optiway',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
