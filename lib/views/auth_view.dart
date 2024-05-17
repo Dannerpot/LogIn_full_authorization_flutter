@@ -20,7 +20,7 @@ class AuthView extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return HomePage(); // Use HomeView here if logged in
+            return HomePage();
           } else {
             return _buildAuthChild(context, authViewModel);
           }
