@@ -15,6 +15,7 @@ class AuthView extends StatelessWidget {
     final authViewModel = Provider.of<AuthViewModel>(context);
 
     return Scaffold(
+      backgroundColor: Color.fromARGB(0, 0, 0, 0),
       body: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
