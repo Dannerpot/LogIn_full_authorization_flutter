@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -50,19 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBIHjH0WE-XftRpv0XrlZgF6xGfAB7ticY',
-    appId: '1:742570069833:android:1ada8bd2ae997102399498',
-    messagingSenderId: '742570069833',
-    projectId: 'auth-63bab',
-    storageBucket: 'auth-63bab.appspot.com',
+    apiKey: 'AIzaSyD0op6zEayC48tsMjFMhW0C7rst5c75C_o',
+    appId: '1:716196782770:android:82ae6db8fd689d7ceb9fab',
+    messagingSenderId: '716196782770',
+    projectId: 'optiway-9e907',
+    storageBucket: 'optiway-9e907.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBIX24huGYcz4jKCi2svuxkt3x9QL5Lxi0',
-    appId: '1:742570069833:ios:1b722dd036874801399498',
-    messagingSenderId: '742570069833',
-    projectId: 'auth-63bab',
-    storageBucket: 'auth-63bab.appspot.com',
+    apiKey: 'AIzaSyDQXZ-HA_DxPwMnv_IWVPBpZQ8g6_5FiuI',
+    appId: '1:716196782770:ios:dbd25d25b6c19560eb9fab',
+    messagingSenderId: '716196782770',
+    projectId: 'optiway-9e907',
+    storageBucket: 'optiway-9e907.appspot.com',
     iosBundleId: 'com.example.modernLogin',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCQ1LVc66GCg1tGzsfBJ_NAd7jG-ku12EM',
+    appId: '1:716196782770:web:3174a7b4a7382ba4eb9fab',
+    messagingSenderId: '716196782770',
+    projectId: 'optiway-9e907',
+    authDomain: 'optiway-9e907.firebaseapp.com',
+    storageBucket: 'optiway-9e907.appspot.com',
+    measurementId: 'G-M5FY7MKDCP',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDQXZ-HA_DxPwMnv_IWVPBpZQ8g6_5FiuI',
+    appId: '1:716196782770:ios:dbd25d25b6c19560eb9fab',
+    messagingSenderId: '716196782770',
+    projectId: 'optiway-9e907',
+    storageBucket: 'optiway-9e907.appspot.com',
+    iosBundleId: 'com.example.modernLogin',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCQ1LVc66GCg1tGzsfBJ_NAd7jG-ku12EM',
+    appId: '1:716196782770:web:9bb68877bfc32bd2eb9fab',
+    messagingSenderId: '716196782770',
+    projectId: 'optiway-9e907',
+    authDomain: 'optiway-9e907.firebaseapp.com',
+    storageBucket: 'optiway-9e907.appspot.com',
+    measurementId: 'G-KZPQKGSSP2',
+  );
+
 }
