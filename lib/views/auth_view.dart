@@ -10,6 +10,8 @@ import 'package:provider/provider.dart';
 
 
 class AuthView extends StatelessWidget {
+  const AuthView({super.key});
+
   @override
   Widget build(BuildContext context) {
     final authViewModel = Provider.of<AuthViewModel>(context);

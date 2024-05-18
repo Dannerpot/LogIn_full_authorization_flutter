@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:modern_login/viewmodels/text_capture_view_model.dart'; // Adjust this import based on your project structure
 
 class TextCapturePage extends StatelessWidget {
+  const TextCapturePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -26,7 +28,7 @@ class __TextCapturePageState extends State<_TextCapturePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Text Capture'),
+        title: const Text('Text Capture'),
       ),
       body: Center(
         child: Column(
@@ -34,10 +36,10 @@ class __TextCapturePageState extends State<_TextCapturePage> {
           children: <Widget>[
             if (viewModel.detectedText.isNotEmpty)
               Text('Detected Text: ${viewModel.detectedText}'),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: viewModel.captureText,
-              child: Text('Capture Text'),
+              child: const Text('Capture Text'),
             ),
           ],
         ),

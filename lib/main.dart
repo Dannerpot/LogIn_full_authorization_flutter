@@ -9,10 +9,12 @@ import 'package:modern_login/viewmodels/auth_view_model.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -23,13 +25,15 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: AuthenticationWrapper(),
+        home: const AuthenticationWrapper(),
       ),
     );
   }
 }
 
 class AuthenticationWrapper extends StatelessWidget {
+  const AuthenticationWrapper({super.key});
+
   @override
   Widget build(BuildContext context) {
     final authViewModel = Provider.of<AuthViewModel>(context);
@@ -38,11 +42,11 @@ class AuthenticationWrapper extends StatelessWidget {
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator(); // Handle loading state
+          return const CircularProgressIndicator(); // Handle loading state
         } else if (snapshot.hasData) {
           return HomePage(); // Navigate to HomeView if logged in
         } else {
-          return AuthView(); // Show AuthView if not logged in
+          return const AuthView(); // Show AuthView if not logged in
         }
       },
     );

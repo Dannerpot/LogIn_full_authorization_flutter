@@ -6,7 +6,7 @@ class MyTextField extends StatelessWidget {
   final bool obscureText;
   final ValueChanged<String>? onChanged;
 
-  MyTextField({
+  const MyTextField({super.key, 
     required this.controller,
     required this.hintText,
     this.obscureText = false,
@@ -21,7 +21,7 @@ class MyTextField extends StatelessWidget {
       onChanged: onChanged,
       decoration: InputDecoration(
         hintText: hintText,
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
       ),
     );
   }

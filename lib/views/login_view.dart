@@ -6,7 +6,7 @@ import 'package:modern_login/widgets/my_textfield.dart';
 class LoginView extends StatelessWidget {
   final LoginViewModel viewModel;
 
-  LoginView({required this.viewModel});
+  LoginView({super.key, required this.viewModel});
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -14,7 +14,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(0, 0, 0, 0),
+      backgroundColor: const Color.fromARGB(0, 0, 0, 0),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

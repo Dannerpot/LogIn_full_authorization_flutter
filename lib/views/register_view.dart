@@ -6,7 +6,7 @@ import 'package:modern_login/widgets/my_textfield.dart';
 class RegisterView extends StatelessWidget {
   final RegisterViewModel viewModel;
 
-  RegisterView({required this.viewModel});
+  const RegisterView({super.key, required this.viewModel});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class RegisterView extends StatelessWidget {
               onPressed: () {
                 viewModel.togglePages();
               },
-              child: Text('Already have an account? Sign In'),
+              child: const Text('Already have an account? Sign In'),
             ),
           ],
         ),

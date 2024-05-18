@@ -28,7 +28,7 @@ class AuthService {
       return userCredential;
     } catch (e) {
       print('Error signing in with email and password: $e');
-      throw e; // Handle the error appropriately
+      rethrow; // Handle the error appropriately
     }
   }
 
@@ -42,7 +42,7 @@ class AuthService {
       return userCredential;
     } catch (e) {
       print('Error creating account with email and password: $e');
-      throw e; // Handle the error appropriately
+      rethrow; // Handle the error appropriately
     }
   }
 
