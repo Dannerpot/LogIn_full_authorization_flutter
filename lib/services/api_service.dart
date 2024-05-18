@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String baseUrl = 'http://localhost:5000'; // Replace with your Flask server URL
+  static const String baseUrl = 'http://192.168.4.1/jpg'; // Replace with your Flask server URL
 
   Future<String> captureText() async {
     try {
