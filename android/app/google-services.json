@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "716196782770",
-    "project_id": "optiway-9e907",
-    "storage_bucket": "optiway-9e907.appspot.com"
+    "project_number": "22171453441",
+    "project_id": "optiway",
+    "storage_bucket": "optiway.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:716196782770:android:82ae6db8fd689d7ceb9fab",
+        "mobilesdk_app_id": "1:22171453441:android:d2bf1d5aade8b6464d5800",
         "android_client_info": {
           "package_name": "com.example.optiway"
         }
@@ -15,26 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD0op6zEayC48tsMjFMhW0C7rst5c75C_o"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:716196782770:android:34fe91f3c6302d8beb9fab",
-        "android_client_info": {
-          "package_name": "com.example.optiway123"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD0op6zEayC48tsMjFMhW0C7rst5c75C_o"
+          "current_key": "AIzaSyANqqW1Bt6OiItreR6MgCgz10gIo1QChVc"
         }
       ],
       "services": {
