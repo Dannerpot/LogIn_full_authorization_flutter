@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:optiway/firebase_options.dart';
+import 'package:optiway/viewmodels/auth_view_model.dart';
+import 'package:optiway/views/auth_view.dart';
+import 'package:optiway/views/home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:modern_login/views/auth_view.dart';
-import 'package:modern_login/views/home_page.dart';
-import 'package:modern_login/viewmodels/auth_view_model.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

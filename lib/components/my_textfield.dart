@@ -8,7 +8,7 @@ class MyTextField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.hintText,
-    required this.obscureText,
+    required this.obscureText, required Function(dynamic value) onChanged,
   });
 
   @override

@@ -41,49 +41,47 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD0op6zEayC48tsMjFMhW0C7rst5c75C_o',
-    appId: '1:716196782770:android:82ae6db8fd689d7ceb9fab',
-    messagingSenderId: '716196782770',
-    projectId: 'optiway-9e907',
-    storageBucket: 'optiway-9e907.appspot.com',
+    apiKey: 'AIzaSyANqqW1Bt6OiItreR6MgCgz10gIo1QChVc',
+    appId: '1:22171453441:android:d2bf1d5aade8b6464d5800',
+    messagingSenderId: '22171453441',
+    projectId: 'optiway',
+    storageBucket: 'optiway.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDQXZ-HA_DxPwMnv_IWVPBpZQ8g6_5FiuI',
-    appId: '1:716196782770:ios:dbd25d25b6c19560eb9fab',
-    messagingSenderId: '716196782770',
-    projectId: 'optiway-9e907',
-    storageBucket: 'optiway-9e907.appspot.com',
-    iosBundleId: 'com.example.modernLogin',
+    apiKey: 'AIzaSyCUt6fQ5ZtzZsYIrjwgmiS4mDoUKQ9Y4gI',
+    appId: '1:22171453441:ios:d146945b749309c54d5800',
+    messagingSenderId: '22171453441',
+    projectId: 'optiway',
+    storageBucket: 'optiway.appspot.com',
+    iosBundleId: 'com.example.optiway',
   );
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCQ1LVc66GCg1tGzsfBJ_NAd7jG-ku12EM',
-    appId: '1:716196782770:web:3174a7b4a7382ba4eb9fab',
-    messagingSenderId: '716196782770',
-    projectId: 'optiway-9e907',
-    authDomain: 'optiway-9e907.firebaseapp.com',
-    storageBucket: 'optiway-9e907.appspot.com',
-    measurementId: 'G-M5FY7MKDCP',
+    apiKey: 'AIzaSyBC2_mi_dVWi-F3ui9fu4mUBPKXQFl5BK8',
+    appId: '1:22171453441:web:8edad4af851143e74d5800',
+    messagingSenderId: '22171453441',
+    projectId: 'optiway',
+    authDomain: 'optiway.firebaseapp.com',
+    storageBucket: 'optiway.appspot.com',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDQXZ-HA_DxPwMnv_IWVPBpZQ8g6_5FiuI',
-    appId: '1:716196782770:ios:dbd25d25b6c19560eb9fab',
-    messagingSenderId: '716196782770',
-    projectId: 'optiway-9e907',
-    storageBucket: 'optiway-9e907.appspot.com',
-    iosBundleId: 'com.example.modernLogin',
+    apiKey: 'AIzaSyCUt6fQ5ZtzZsYIrjwgmiS4mDoUKQ9Y4gI',
+    appId: '1:22171453441:ios:d146945b749309c54d5800',
+    messagingSenderId: '22171453441',
+    projectId: 'optiway',
+    storageBucket: 'optiway.appspot.com',
+    iosBundleId: 'com.example.optiway',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCQ1LVc66GCg1tGzsfBJ_NAd7jG-ku12EM',
-    appId: '1:716196782770:web:9bb68877bfc32bd2eb9fab',
-    messagingSenderId: '716196782770',
-    projectId: 'optiway-9e907',
-    authDomain: 'optiway-9e907.firebaseapp.com',
-    storageBucket: 'optiway-9e907.appspot.com',
-    measurementId: 'G-KZPQKGSSP2',
+    apiKey: 'AIzaSyBC2_mi_dVWi-F3ui9fu4mUBPKXQFl5BK8',
+    appId: '1:22171453441:web:352b20eeda118dde4d5800',
+    messagingSenderId: '22171453441',
+    projectId: 'optiway',
+    authDomain: 'optiway.firebaseapp.com',
+    storageBucket: 'optiway.appspot.com',
   );
 
 }

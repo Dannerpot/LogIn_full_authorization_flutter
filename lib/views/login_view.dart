@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:modern_login/viewmodels/login_view_model.dart';
-import 'package:modern_login/widgets/my_button.dart';
-import 'package:modern_login/widgets/my_textfield.dart';
+import 'package:optiway/components/my_button.dart';
+import 'package:optiway/components/my_textfield.dart';
+import 'package:optiway/viewmodels/login_view_model.dart';
 
 class LoginView extends StatelessWidget {
   final LoginViewModel viewModel;
@@ -22,7 +22,7 @@ class LoginView extends StatelessWidget {
             MyTextField(
               hintText: 'Email',
               onChanged: (value) => _emailController.text = value,
-              controller: _emailController,
+              controller: _emailController, obscureText: false,
             ),
             MyTextField(
               hintText: 'Password',
@@ -39,7 +39,7 @@ class LoginView extends StatelessWidget {
 
                 // Call sign-in method from view model
                 await viewModel.signInWithEmailAndPassword(email, password);
-              },
+              }, onTap: () {  },
             ),
             TextButton(
               onPressed: () {

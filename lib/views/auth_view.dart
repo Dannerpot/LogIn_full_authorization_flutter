@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:modern_login/viewmodels/auth_view_model.dart';
-import 'package:modern_login/viewmodels/login_view_model.dart';
-import 'package:modern_login/viewmodels/register_view_model.dart';
-import 'package:modern_login/views/login_view.dart';
-import 'package:modern_login/views/register_view.dart';
-import 'package:modern_login/views/home_page.dart'; 
+import 'package:optiway/viewmodels/auth_view_model.dart';
+import 'package:optiway/viewmodels/login_view_model.dart';
+import 'package:optiway/viewmodels/register_view_model.dart';
+import 'package:optiway/views/home_page.dart';
+import 'package:optiway/views/login_view.dart';
+import 'package:optiway/views/register_view.dart';
 import 'package:provider/provider.dart';
 
 

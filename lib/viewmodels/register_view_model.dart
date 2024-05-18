@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modern_login/viewmodels/auth_view_model.dart';
+import 'package:optiway/viewmodels/auth_view_model.dart';
 
 class RegisterViewModel extends ChangeNotifier {
   final AuthViewModel _authViewModel;

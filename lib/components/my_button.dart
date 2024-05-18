@@ -6,7 +6,7 @@ class MyButton extends StatelessWidget {
   const MyButton({
     super.key,
     required this.onTap,
-    required this.text,
+    required this.text, required Future<Null> Function() onPressed,
   });
 
   @override

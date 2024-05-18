@@ -1,7 +1,7 @@
 // text_capture_view_model.dart
 
 import 'package:flutter/material.dart';
-import 'package:modern_login/services/api_service.dart';
+import 'package:optiway/services/api_service.dart';
 
 class TextCaptureViewModel extends ChangeNotifier {
   final ApiService apiService = ApiService();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:modern_login/viewmodels/register_view_model.dart';
-import 'package:modern_login/widgets/my_button.dart';
-import 'package:modern_login/widgets/my_textfield.dart';
+import 'package:optiway/components/my_button.dart';
+import 'package:optiway/components/my_textfield.dart';
+import 'package:optiway/viewmodels/register_view_model.dart';
 
 class RegisterView extends StatelessWidget {
   final RegisterViewModel viewModel;
@@ -17,7 +17,7 @@ class RegisterView extends StatelessWidget {
           children: [
             MyTextField(
               hintText: 'Email',
-              onChanged: (value) {},controller: TextEditingController(), // Implement your logic
+              onChanged: (value) {},controller: TextEditingController(), obscureText: false, // Implement your logic
             ),
             MyTextField(
               hintText: 'Password',
@@ -29,10 +29,7 @@ class RegisterView extends StatelessWidget {
               obscureText: true,
               onChanged: (value) {},controller: TextEditingController(), // Implement your logic
             ),
-            MyButton(
-              text: 'Create Account',
-              onPressed: () {}, // Implement your logic
-            ),
+            
             TextButton(
               onPressed: () {
                 viewModel.togglePages();

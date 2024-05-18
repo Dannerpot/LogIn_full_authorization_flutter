@@ -1,8 +1,8 @@
 // text_capture_page.dart
 
 import 'package:flutter/material.dart';
+import 'package:optiway/viewmodels/text_capture_view_model.dart';
 import 'package:provider/provider.dart';
-import 'package:modern_login/viewmodels/text_capture_view_model.dart'; // Adjust this import based on your project structure
 
 class TextCapturePage extends StatelessWidget {
   const TextCapturePage({super.key});
