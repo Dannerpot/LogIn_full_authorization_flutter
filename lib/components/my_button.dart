@@ -1,30 +1,26 @@
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  final Function()? onTap;
   final String text;
-  const MyButton({
-    super.key,
-    required this.onTap,
-    required this.text, required Future<Null> Function() onPressed,
-  });
+  final VoidCallback onPressed;
+
+  const MyButton({Key? key, required this.text, required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: onPressed,
       child: Container(
-        padding: const EdgeInsets.all(22),
-        margin: const EdgeInsets.symmetric(horizontal: 25),
+        width: 200,
+        height: 50,
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Colors.blue,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
+            style: TextStyle(color: Colors.white, fontSize: 16),
           ),
         ),
       ),

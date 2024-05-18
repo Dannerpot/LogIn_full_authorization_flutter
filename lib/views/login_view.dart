@@ -21,13 +21,11 @@ class LoginView extends StatelessWidget {
           children: [
             MyTextField(
               hintText: 'Email',
-              onChanged: (value) => _emailController.text = value,
               controller: _emailController, obscureText: false,
             ),
             MyTextField(
               hintText: 'Password',
               obscureText: true,
-              onChanged: (value) => _passwordController.text = value,
               controller: _passwordController,
             ),
             MyButton(
@@ -39,7 +37,7 @@ class LoginView extends StatelessWidget {
 
                 // Call sign-in method from view model
                 await viewModel.signInWithEmailAndPassword(email, password);
-              }, onTap: () {  },
+              },
             ),
             TextButton(
               onPressed: () {
